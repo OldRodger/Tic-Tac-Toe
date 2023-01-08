@@ -1,0 +1,124 @@
+.form {
+    font-size: 1.5rem;
+
+    &__title {
+        font-size: 2.4rem;
+    }
+
+    &__label {}
+
+    &__text {
+        display: inline-block;
+        margin-bottom: 5px;
+
+    }
+
+    &__box {
+        padding: 1.2rem 8px;
+        border-radius: 3px;
+        cursor: pointer;
+        display: flex;
+        gap: 3.5rem;
+        align-items: center;
+        overflow: hidden;
+
+
+        &>label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+
+
+        }
+
+    }
+
+
+
+    &__choose {
+        background-color: $color-secondary;
+        @extend.form__box;
+
+        &--slide {
+            justify-content: space-between;
+        }
+
+    }
+
+    &__icon {
+        color: $color-white;
+    }
+
+    &__radio-box {
+        display: flex;
+        border: 1px solid $color-secondary;
+        border-radius: 3px;
+
+        .form__icon {
+            transform: scale(.5);
+            opacity: 0;
+        }
+    }
+
+    &__submit {
+        align-self: end;
+        background-color: $color-tertiary;
+        border-radius: 3px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+
+        &[data-changed="true"] {
+            background-color: $color-orange;
+        }
+    }
+
+
+}
+
+.form__choose--slide .form__icon {
+    transition: $transition-fast;
+}
+
+// play boy
+
+.form__check:checked+.form__choose--slide>.form__icon:last-child {
+    transform: translateX(4.5rem);
+}
+
+
+.form__check:not(:checked)+.form__choose--slide>.form__icon:first-child {
+    transform: translateX(-4.5rem);
+}
+
+.form__radio:checked+.form__radio-box {
+    background-color: $color-secondary
+}
+
+.form__radio:checked+.form__radio-box>.form__icon {
+    animation: pop 350ms ease forwards;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.25);
+    }
+
+    89% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

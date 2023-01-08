@@ -1,0 +1,68 @@
+.board {
+
+    &__bars {
+        display: flex;
+        border-radius: 1.5rem;
+        gap: 5px;
+        margin-bottom: 1.5rem;
+    }
+
+    &__bar {
+        flex: 1;
+        padding: 1.5rem 2rem;
+        color: white;
+        opacity: .3;
+
+        &[data-active="true"]{
+            opacity: 1;
+        }
+
+        &:first-child {
+            background-color: darken($color-secondary, 10%);
+            border-radius: 1.5rem 0 0 1.5rem;
+
+            &[data-active="true"] {
+                background-color: $color-secondary;
+            }
+
+        }
+
+        &:last-child {
+            text-align: right;
+            border-radius: 0 1.5rem 1.5rem 0;
+            background-color:  darken($color-primary, 10%);
+
+            &[data-active="true"] {
+                background-color: $color-primary;
+            }
+
+        }
+    }
+
+    &__boxes {
+        display: grid;
+        grid-template-columns: repeat(3, 12rem);
+        grid-template-rows: repeat(3, 10rem);
+        gap: 5px;
+
+        &[data-grid="4"] {
+            grid-template-columns: repeat(4, 10rem);
+            grid-template-rows: repeat(4, 10rem);
+        }
+    }
+
+    
+
+    &__box {
+        background-color: white;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        font-size: 2.5rem;
+        color: $color-primary;
+
+        &[data-box="X"]{
+            color: $color-secondary;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    background-color: $color-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.setting-btn {
+    position: fixed;
+    top: 8rem;
+    right: 8rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: $color-primary;
+    color: white;
+    z-index: 4;
+
+    &[data-setting-open="true"]{
+        background-color: $color-secondary;
+    }
+}

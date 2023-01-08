@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./scss/main.scss">
+    <script src="./js/app.js" type="module"></script>
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <div class="modal">
+        <div class="modal__content">
+            <h2 class="modal__title">Modal Title 🥂</h2>
+            <p class="modal_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem facere blanditiis, est
+                non esse optio!</p>
+            <button type="button" class="btn btn--mid modal__btn menu__btn">close</button>
+        </div>
+    </div>
+
+    <!-- SETTINGS BUTTON -->
+    <button type="button" class="btn btn--round setting-btn" data-setting-open="false">
+        <span class="material-symbols-outlined">
+            handyman
+        </span>
+    </button>
+
+    <!-- MAIN PAGE -->
+    <section class="home">
+        <!--MENU -->
+        <figure class="menu">
+            <!-- MENU TITLE -->
+            <h2 class="heading-primary">Tic Tac Toe</h2>
+
+            <!--3 MENU BUTTONS -->
+            <button type="button" class="btn btn--big menu__btn menu__btn--new">
+                <span class="material-symbols-outlined">
+                    restart_alt
+                </span>
+                <span>new game</span>
+            </button>
+
+            <button type="button" class="btn btn--big menu__btn menu__btn--resume">
+                <span class="material-symbols-outlined">
+                    play_arrow
+                </span>
+                <span>resume game</span>
+            </button>
+
+            <button type="button" class="btn btn--big menu__btn menu__btn--instruction">
+                <span class="material-symbols-outlined">
+                    info
+                </span>
+                <span>instructions</span>
+            </button>
+        </figure>
+
+
+    </section>
+
+    <!-- SETTINGS PAGE -->
+    <section class="settings" data-is-open="false">
+        <form class="menu form">
+            <!-- MENU TITLE -->
+            <h2 class="form__title">Settings</h2>
+            <div class="form__group" title="click to change">
+                <label class="form__label" for="player-o">
+                    <span class="form__text">Player Two</span>
+                    <input type="checkbox" class="form__check" id="player-o" name="player-2" checked hidden>
+                    <div class="form__choose form__choose--slide">
+                        <span class="material-symbols-outlined form__icon">
+                            face
+                        </span>
+
+                        <span class="material-symbols-outlined form__icon">
+                            smart_toy
+                        </span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="form__group" title="click to change">
+                <label class="form__label">
+                    <span class="form__text">Bot Difficulty</span>
+                    <div class="form__box">
+                        <label for="diff-1">
+                            <input class="form__radio" id="diff-1" type="radio" name="bot-difficulty" hidden
+                                value="easy" checked>
+                            <span class="form__radio-box">
+                                <span class="material-symbols-outlined form__icon">
+                                    done_all
+                                </span>
+                            </span>
+                            <span>Green Horn</span>
+                        </label>
+                        <label for="diff-2">
+                            <input class="form__radio" id="diff-2" type="radio" name="bot-difficulty" hidden
+                                value="medium">
+                            <span class="form__radio-box">
+                                <span class="material-symbols-outlined form__icon">
+                                    done_all
+                                </span>
+                            </span>
+                            <span>Advanced</span>
+                        </label>
+                        <label for="diff-3">
+                            <input class="form__radio" id="diff-3" type="radio" name="bot-difficulty" hidden
+                                value="master">
+                            <span class="form__radio-box">
+                                <span class="material-symbols-outlined form__icon form__icon">
+                                    done_all
+                                </span>
+                            </span>
+                            <span>Master</span>
+                        </label>
+                    </div>
+                </label>
+            </div>
+
+            <div class="form__group" title="click to change">
+                <label class="form__label" for="grids">
+                    <span class="form__text">Grids</span>
+                    <input type="checkbox" class="form__check" id="grids" name="grids" checked hidden>
+                    <div class="form__choose form__choose--slide">
+                        <span class="material-symbols-outlined form__icon">
+                            grid_3x3
+                        </span>
+
+                        <span class="material-symbols-outlined form__icon">
+                            grid_4x4
+                        </span>
+                    </div>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn--sm btn--effect form__submit" data-changed="false">
+                <span class="material-symbols-outlined form__icon">
+                    done_all
+                </span>
+                <span>save</span>
+            </button>
+
+        </form>
+    </section>
+
+    <!-- NEW GAME -->
+    <section class="game" data-is-open="false">
+        <header class="game__header">
+            <div class="game__controls">
+                <button type="button" class="btn btn--effect btn--sm game__control game__control--home" title="back">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </button>
+                <button type="button" class="btn btn--effect btn--sm game__control game__control--restart" title="restart">
+                    <span class="material-symbols-outlined">
+                        restart_alt
+                    </span>
+                </button>
+                <button type="button" class="btn btn--effect btn--sm game__control game__control--save" title="save">
+                    <span class="material-symbols-outlined">
+                        save
+                    </span>
+                </button>
+            </div>
+
+            <div class="game__scores">
+                <div class="game__score">
+                    <span>Player X</span>
+                    <span>0</span>
+                </div>
+
+                <div class="game__score">
+                    <span>Player O</span>
+                    <span>0</span>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="board">
+            <div class="board__bars">
+                <span class="board__bar" data-active="true">Player X</span>
+                <span class="board__bar" data-active="false">Player O</span>
+            </div>
+
+            <div class="board__boxes" data-grid="3">
+                <div class="board__box" data-index="0"></div>
+                <div class="board__box" data-index="1"></div>
+                <div class="board__box" data-index="2"></div>
+                <div class="board__box" data-index="3"></div>
+                <div class="board__box" data-index="4"></div>
+                <div class="board__box" data-index="5"></div>
+                <div class="board__box" data-index="6"></div>
+                <div class="board__box" data-index="7"></div>
+                <div class="board__box" data-index="8"></div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

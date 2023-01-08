@@ -1,0 +1,48 @@
+.btn{
+    font-family: $font-default;
+    border: none;
+    cursor: pointer;
+    transition: $transition-mid;
+    text-transform: capitalize;
+
+
+    &--effect{
+        position: relative;
+
+        &:hover::after{
+            transform: scaleX(1.4) scaleY(1.8);
+            opacity: 0;
+        }
+
+        &::after{
+            content: '';
+            transition: $transition-mid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: inherit;
+            border-radius: inherit;
+            z-index: -1;
+        }
+    }
+
+    &--round{
+        border-radius: 50%;
+    }
+
+    &--sm{
+        padding: 8px 1.2rem;
+    }
+
+    &--mid{
+        padding: 1.2rem 2.5rem;
+    }
+
+    &--big{
+        padding:1.5rem 4rem ;
+    }
+
+
+}
