@@ -19,6 +19,14 @@ class homeView extends View {
         })
     }
 
+    handleInstructionBtnClicked(handler) {
+        this._parentEl.addEventListener('click', (e) => {
+            const btn = e.target.closest('.menu__btn--instruction');
+            if (!btn) return;
+            handler();
+        })
+    }
+
     handleSettingsButtonClicked = (handler) => {
         const setting_btn = document.querySelector('.setting-btn');
         setting_btn.addEventListener('click', function () {

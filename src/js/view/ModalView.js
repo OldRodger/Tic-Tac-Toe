@@ -14,7 +14,7 @@ class modalView extends View {
             <div class="modal__content">
                 <h2 class="modal__title">${this._data.title}</h2>
                 <p class="modal_text">${this._data?.text ?? ''}</p>
-                <button type="button" class="btn btn--mid modal__btn menu__btn">close</button>
+                <button type="button" class="btn btn--mid modal__btn menu__btn">${this._data.btnText || 'close'}</button>
             </div>
         `;
     }

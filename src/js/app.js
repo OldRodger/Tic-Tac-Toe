@@ -66,6 +66,27 @@ const handleResumeGame = () => {
 }
 
 
+/**
+ * This method opens the instruction modal
+ * @function handleShowInstruction
+ */
+const handleShowInstruction = () => {
+    showModal({
+        title: 'Instructions',
+        text: `
+            You've undoubtedly played Tic-Tac-Toe before.
+            Tic-Tac-Toe requires you to look ahead and try to predict what the person playing against you will do next.
+            (1) The game is played on a 3 by 3 or 4 by 4 square grid.
+            (2) You are X, and your adversary is O. Each player takes turns placing their mark in an empty space.
+            (3) The winner is the first player to receive three consecutive marks (up, down, across, or diagonally).
+            (4) The game is ended when all nine or sixteen squares are filled. If no one wins, the game finishes in a draw.
+        `,
+        btnText: 'i understand'
+
+    })
+}
+
+
 
 
 
@@ -269,10 +290,15 @@ const play = (boxIndex) => {
     }
 }
 
-const showModal = ({ title, text = null, clicked = () => {ModalView.showModal(false)} }) => {
+const showModal = ({ 
+    title, 
+    text = null, 
+    btnText= null,
+    clicked = () => {ModalView.showModal(false)} }) => {
     ModalView.update({
         title,
         text,
+        btnText,
         clicked,
     });
     ModalView.showModal(true);
@@ -321,6 +347,7 @@ const showModal = ({ title, text = null, clicked = () => {ModalView.showModal(fa
     // View
     HomeView.handleNewGameBtnClicked(handleNewGame);
     HomeView.handleResumeGameBtnClicked(handleResumeGame);
+    HomeView.handleInstructionBtnClicked(handleShowInstruction)
     HomeView.handleSettingsButtonClicked(handleOpenSettings);
 
     SettingFormView.handleSettingSave(handleSettingSave);
