@@ -52,7 +52,12 @@ const handleNewGame = () => {
 
 const handleResumeGame = () => {
     const savedState = JSON.parse(localStorage.getItem('gameState'));
-    if (!savedState) return;
+    if (!savedState) {
+        showModal({
+            title: 'No saved game found!'
+        })
+        return;
+    }
 
     Model.writeState(savedState);
     const data = Model.getData()
@@ -78,11 +83,7 @@ const handleSaveGame = () => {
     const currentGameState = Model.getData();
     localStorage.setItem('gameState', JSON.stringify(currentGameState));
     showModal({
-        title: `Game saved successfully!!`,
-        text: null,
-        clicked() {
-            ModalView.showModal(false);
-        }
+        title: `Game saved successfully!!`
     });
 }
 
@@ -254,7 +255,6 @@ const play = (boxIndex) => {
     } else if (!isWinner && Model.checkDraw()) {
         showModal({
             title: `Draw!!`,
-            text: null,
             clicked: function () {
                 ModalView.showModal(false);
                 handleRestartGame();
@@ -269,7 +269,7 @@ const play = (boxIndex) => {
     }
 }
 
-const showModal = ({ title, text, clicked }) => {
+const showModal = ({ title, text = null, clicked = () => {ModalView.showModal(false)} }) => {
     ModalView.update({
         title,
         text,
