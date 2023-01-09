@@ -24,7 +24,12 @@
         flex-flow: column;
         gap: 2.5rem;
         transform: scale(0);
-        max-width: 90%;
+        max-width: 70%;
+        
+        @media screen and (max-width: 600px) {
+            max-width: 90%;
+            
+        }
     }
 
     &__title{
