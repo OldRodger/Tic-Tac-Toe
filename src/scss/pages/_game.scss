@@ -1,4 +1,4 @@
-.game{
+.game {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,12 +10,12 @@
     display: grid;
     place-items: center;
 
-    &__header{
+    &__header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        height: 10rem;
+        height: 12rem;
         padding: 0 5%;
         color: white;
         position: fixed;
@@ -23,7 +23,7 @@
         left: 0;
     }
 
- 
+
 
     &__control {
         background-color: $color-primary;
@@ -31,9 +31,30 @@
         color: $color-white;
         border-radius: 3px;
 
-        &:not(:last-child){
+        &:not(:last-child) {
             margin-right: 1rem;
         }
     }
-}
 
+    &__scores {
+        display: grid;
+        gap: 5px;
+    }
+
+    &__score {
+        padding: 7px;
+        border-radius: 5px;
+        opacity: .6;
+
+        &:nth-child(1) {
+            background-color: $color-secondary;
+        }
+        &:nth-child(2) {
+            background-color: $color-primary;
+        }
+
+        &.active{
+            opacity: 1;
+        }
+    }
+}
