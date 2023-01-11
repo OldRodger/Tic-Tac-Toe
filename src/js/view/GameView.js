@@ -1,5 +1,21 @@
 import View from "./View";
 
+/**
+ * @class gameView @extends @class View
+ * this class has methods of its own
+ * @function _generateMarkup 
+ * @function _generateBoardMarkup
+ * @function handlePlay
+ * @function handleBackBtnClicked
+ * @function handleRestartBtnClicked
+ * @function handleSaveBtnClicked 
+ * 
+ * as well as variable gotten from @class View 
+ * @var _parentEl
+ * @var _data
+ * 
+ * 
+ */
 class gameView extends View {
     _parentEl = document.querySelector('.game');
 
@@ -79,7 +95,12 @@ class gameView extends View {
 
 
 
-
+    /**
+     * @function handlePlay
+     * This method gets an index from the events target
+     * and passes it to the handler function
+     * @param {Function} handler - function to be called after eventlistener is activated
+     */
     handlePlay(handler) {
         this._parentEl.addEventListener('click', e => {
             const box = e.target.closest('.board__box');
