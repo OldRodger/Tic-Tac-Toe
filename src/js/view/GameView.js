@@ -54,7 +54,7 @@ class gameView extends View {
                         <span>${this._data.score.X}</span>
                     </div>
 
-                    <div class="game__score" ${this._data.score.X < this._data.score.O ? 'active' : ''}>
+                    <div class="game__score ${this._data.score.X < this._data.score.O ? 'active' : ''}">
                         <span>${opponent}</span>
                         <span>${this._data.score.O}</span>
                     </div>
