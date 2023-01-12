@@ -165,9 +165,9 @@ class Bot {
     _hardBotPlay() {
 
         if (this._first) {
-            this._first = false;
-
+            
             if (this._availablePlays.includes(4)) {
+                this._first = false;
                 return 4;
             }
 
